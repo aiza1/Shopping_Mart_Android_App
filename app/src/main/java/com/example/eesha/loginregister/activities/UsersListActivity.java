@@ -86,4 +86,3 @@ public class UsersListActivity extends AppCompatActivity {
         }.execute();
     }
 }
-

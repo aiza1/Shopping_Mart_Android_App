@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "174624007141",
+    "firebase_url": "https://smap-3776a.firebaseio.com",
+    "project_id": "smap-3776a",
+    "storage_bucket": "smap-3776a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:174624007141:android:d7df7a7cd9494752",
+        "android_client_info": {
+          "package_name": "com.example.eesha.loginregister"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "174624007141-b361q68qla7amlal7ctrngjn9kd6a7cl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbD-QC3L-A90WDI9-8f7D6GqTFXPnuyis"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

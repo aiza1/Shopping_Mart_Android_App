@@ -9,11 +9,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatButton;
 import android.support.v7.widget.AppCompatTextView;
 import android.view.View;
+import android.widget.TextView;
 
 import com.example.eesha.loginregister.R;
 import com.example.eesha.loginregister.helpers.InputValidation;
 import com.example.eesha.loginregister.model.User;
 import com.example.eesha.loginregister.sql.DatabaseHelper;
+import com.google.firebase.auth.FirebaseAuth;
+
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
 
     private final AppCompatActivity activity = RegisterActivity.this;
@@ -31,27 +34,28 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     private TextInputEditText textInputEditTextConfirmPassword;
 
     private AppCompatButton appCompatButtonRegister;
-    private AppCompatTextView appCompatTextViewLoginLink;
 
     private InputValidation inputValidation;
     private DatabaseHelper databaseHelper;
     private User user;
-
+    private FirebaseAuth mAuth;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         getSupportActionBar().hide();
 
-        initViews();
-        initListeners();
-        initObjects();
+//        initViews();
+//        initListeners();
+//        initObjects();
+        mAuth = FirebaseAuth.getInstance();
     }
 
     /**
      * This method is to initialize views
      */
     private void initViews() {
+
         nestedScrollView = (NestedScrollView) findViewById(R.id.nestedScrollView);
 
         textInputLayoutName = (TextInputLayout) findViewById(R.id.textInputLayoutName);
@@ -66,7 +70,8 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
         appCompatButtonRegister = (AppCompatButton) findViewById(R.id.appCompatButtonRegister);
 
-        appCompatTextViewLoginLink = (AppCompatTextView) findViewById(R.id.appCompatTextViewLoginLink);
+
+
 
     }
 
@@ -75,7 +80,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
      */
     private void initListeners() {
         appCompatButtonRegister.setOnClickListener(this);
-        appCompatTextViewLoginLink.setOnClickListener(this);
+       /*appCompatTextViewLoginLink.setOnClickListener(this); */
 
     }
 
@@ -98,6 +103,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+
 
             case R.id.appCompatButtonRegister:
                 postDataToSQLite();
@@ -159,6 +165,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         textInputEditTextEmail.setText(null);
         textInputEditTextPassword.setText(null);
         textInputEditTextConfirmPassword.setText(null);
+
     }
 }
 
